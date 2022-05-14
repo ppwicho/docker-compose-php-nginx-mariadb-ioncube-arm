@@ -7,7 +7,7 @@ services:
     build: ./nginx/ 
     container_name: nginx-container  
     ports:  
-      - 8016:80  
+      - 80:80
     depends_on:
       - php
     volumes:
