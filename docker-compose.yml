@@ -1,0 +1,51 @@
+version: "3.9"
+x-common-variables: &common-variables
+  ARCH: "linux/arm64"
+services:
+  nginx:
+    platform: linux/arm64
+    build: ./nginx/ 
+    container_name: nginx-container  
+    ports:  
+      - 8016:80  
+    depends_on:
+      - php
+    volumes:
+      - type: bind
+        source: ./www/html/
+        target: /var/www/html/  
+
+  php:
+    platform: linux/arm64
+    build: 
+      context: .
+      dockerfile: ./php/Dockerfile
+    container_name: php-container  
+    environment:
+      - DB_HOST=value
+      - DB_USER=whmcs_user
+      - DB_PASS=c5D574XFVEzj
+    expose:  
+      - 9000  
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./www/html/
+        target: /var/www/html/ 
+
+  db:
+    platform: linux/arm64
+    image: mariadb:10.3
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:  
+      MARIADB_ROOT_PASSWORD: "HbR4oWyjQQWk"
+      MARIADB_DATABASE: "whmcs"
+      MARIADB_USER: "whmcs_user"
+      MARIADB_PASSWORD: "c5D574XFVEzj"
+    expose:
+      - 3306
+
+volumes:
+  mysql-data:
