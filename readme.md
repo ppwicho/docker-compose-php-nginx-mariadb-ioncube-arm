@@ -7,7 +7,7 @@ Change passwords, databases, users in docker-compose and php/Dockerfile/index.ph
 
 If you need to run the compose for AMD-64(x86_64) you may need to modify the docker-compose.yml and the php/DockerFile accordingly.
 
-´docker-compose up -build´
+`docker-compose up -build`
 
 
 ## Run 
