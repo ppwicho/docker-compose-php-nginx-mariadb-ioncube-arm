@@ -6,7 +6,7 @@ If you need to run the docker-compose for AMD-64(x86_64) you may need to modify 
 
 ## Time to Docker-Compose
 
-Change passwords, databases, users in docker-compose and php/Dockerfile/index.php
+Change passwords, databases, users in docker-compose.yml and php/index.php
 
 `docker-compose up -build`
 
