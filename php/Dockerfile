@@ -30,6 +30,6 @@ RUN chmod 751 /usr/local/lib/ioncube_loader_lin_${IONCUBE_VERSION}.so
 RUN pecl install xdebug
 RUN (echo "zend_extension = $(find /usr/local/lib/php/extensions -name 'xdebug.so')"\
      > ${PHP_CONFD_PATH}/8-ext-xdebug.ini)
-COPY ./php/xdebug.ini ${PHP_CONFD_PATH}/9-ext-xdebug.ini
+#COPY ./php/xdebug.ini ${PHP_CONFD_PATH}/9-ext-xdebug.ini
 # cronjobs 
-COPY ./php/crontab.conf /etc/cron.d/whmcs_cron
+#COPY ./php/crontab.conf /etc/cron.d/whmcs_cron
