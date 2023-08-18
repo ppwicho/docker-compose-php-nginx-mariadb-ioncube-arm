@@ -3,12 +3,12 @@ ENV PHP_VERSION=8.1
 ENV IONCUBE_VERSION=8.1
 ENV PHP_CONFD_PATH=/usr/local/etc/php/conf.d/
 # Maybe there is a better way to detect the system architecture, I'm ussing M1 ARM here 
-ENV LOADER=aarch64 
+ENV LOADER=x86-64 
 
 RUN apt-get update  && apt-get install --no-install-recommends -y \
     unzip \ 
     zlib1g \ 
-    libpng-dev \
+    libpng-dev \    
     cron \
     nano \
     tzdata
@@ -32,4 +32,4 @@ RUN (echo "zend_extension = $(find /usr/local/lib/php/extensions -name 'xdebug.s
      > ${PHP_CONFD_PATH}/8-ext-xdebug.ini)
 #COPY ./php/xdebug.ini ${PHP_CONFD_PATH}/9-ext-xdebug.ini
 # cronjobs 
-#COPY ./php/crontab.conf /etc/cron.d/whmcs_cron
+COPY ./php/crontab.conf /etc/cron.d/whmcs_cron
