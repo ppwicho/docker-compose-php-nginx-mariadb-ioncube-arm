@@ -2,6 +2,7 @@ version: "3.9"
 x-common-variables: &common-variables
 services:
   nginx:
+    platform: linux/arm64
     build: ./nginx/ 
     container_name: nginx-container  
     ports:  
@@ -14,6 +15,7 @@ services:
         target: /var/www/html/  
 
   php:
+    platform: linux/arm64
     build: 
       context: .
       dockerfile: ./php/Dockerfile
@@ -32,6 +34,7 @@ services:
         target: /var/www/html/ 
 
   db:
+    platform: linux/arm64
     image: mariadb:10.3
     volumes:
       - mysql-data:/var/lib/mysql
