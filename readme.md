@@ -1,6 +1,6 @@
 # docker-compose 3.9 with MariaDB, Nginx and PHP 8.1 with ionCube Loader and Xdebug
 
-## ARM.64 M1 M2 (Mabooks)
+## ARM.64 M1 M2 (MacBooks)
 
 
 Just run: 
@@ -24,6 +24,8 @@ Now you are ready to copy  your PHP code  to
 `./www/html/`
 
 Happy developing!
+
+
 
 
 
