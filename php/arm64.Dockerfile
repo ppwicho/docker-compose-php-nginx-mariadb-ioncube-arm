@@ -3,7 +3,7 @@
     ENV IONCUBE_VERSION=8.1
     ENV PHP_CONFD_PATH=/usr/local/etc/php/conf.d/
     # Maybe there is a better way to detect the system architecture, I'm ussing M1 ARM here 
-    ENV LOADER=arch64 
+    ENV LOADER=aarch64 
 
     RUN apt-get update  && apt-get install --no-install-recommends -y \
         unzip \ 
