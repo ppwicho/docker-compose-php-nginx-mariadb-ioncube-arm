@@ -7,7 +7,7 @@
       <h1>Hello World!</h1>  
       <p><?php echo 'We are running PHP, version: ' . phpversion(); ?></p>  
       <?  
-       $database = "whmcs";
+       $database = "databasename";
        $user = "root";  
        $password = "HbR4oWyjQQWk";  
        $host = "db";

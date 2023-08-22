@@ -1,0 +1,11 @@
+#This is the default override, to build for arm64 (M1 M2 MACs)
+services:
+  nginx:
+    platform: linux/arm64
+  php:
+    platform: linux/arm64
+    build: 
+      context: .
+      dockerfile: ./php/arm64.Dockerfile
+  db:
+    platform: linux/arm64

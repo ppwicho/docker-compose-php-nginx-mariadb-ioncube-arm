@@ -1,0 +1,11 @@
+#Rename this file to docker-compose.override.yml to enable amd64 build
+services:
+  nginx:
+    platform: linux/amd64
+  php:
+    platform: linux/amd64
+    build: 
+      context: .
+      dockerfile: ./php/x86.Dockerfile
+  db:
+    platform: linux/amd64
