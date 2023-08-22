@@ -1,17 +1,17 @@
-    FROM php:8.1-fpm  
-    ENV PHP_VERSION=8.1
-    ENV IONCUBE_VERSION=8.1
-    ENV PHP_CONFD_PATH=/usr/local/etc/php/conf.d/
-    # Maybe there is a better way to detect the system architecture, I'm ussing M1 ARM here 
-    ENV LOADER=aarch64 
+FROM php:8.1-fpm  
+ENV PHP_VERSION=8.1
+ENV IONCUBE_VERSION=8.1
+ENV PHP_CONFD_PATH=/usr/local/etc/php/conf.d/
+# Maybe there is a better way to detect the system architecture, I'm ussing M1 ARM here 
+ENV LOADER=arch64 
 
-    RUN apt-get update  && apt-get install --no-install-recommends -y \
-        unzip \ 
-        zlib1g \ 
-        libpng-dev \    
-        cron \
-        nano \
-        tzdata
+RUN apt-get update  && apt-get install --no-install-recommends -y \
+    unzip \ 
+    zlib1g \ 
+    libpng-dev \    
+    cron \
+    nano \
+    tzdata
 
 RUN docker-php-ext-install \ 
     pdo \
